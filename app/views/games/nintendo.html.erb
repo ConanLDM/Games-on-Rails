@@ -1,1 +1,8 @@
-<h1>Nintendo</h1>
+<%= form_with(model: @game, local: true) do |f| %>
+  <h1>Nintendo</h1>
+
+  <%= f.label :main_image %>
+  <%= f.file_field :main_image %>
+
+  <%= f.submit %>
+<% end %>
