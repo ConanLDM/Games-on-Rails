@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Rails 7 Video Games Project
 
-Things you may want to cover:
+This is a Rails 7 project with a central focus on video ganes. The aim is to feature a review system whether it be internally in the project or pulling from an external source. Much potential for future features including users sharing their recommendations and a way to connect on the website between friends.
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
