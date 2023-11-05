@@ -9,3 +9,4 @@ The aim is to feature a review system whether it be internally in the project or
 Much potential for future features including users sharing their recommendations and a way to connect on the website between friends.
 
 
+## Working on how to import game information into the project.
