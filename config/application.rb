@@ -18,5 +18,8 @@ module GamesProject
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.factory_bot.definition_file_paths = ["custom/factories"]
+
+    config.web_console.development_only = false
   end
 end
