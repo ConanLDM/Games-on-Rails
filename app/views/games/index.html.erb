@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p style="color: blue;"><%= notice %></p>
+
+      <h1>Games</h1>
+
+      <div id="games">
+        <% @games.each do |game| %>
+          <%= render game %>
+          <p>
+            <%= link_to "Show this game", game %>
+          </p>
+        <% end %>
+      </div>
+
+      <div data-controller="toggle" class="mt-5">
+        <button data-action="click->toggle#fire" class="btn btn-outline-primary">
+          Add a new game</button>
+        <%= render "form", game: @game %>
+      </div>
+    </div>
+  </div>
+</div>
