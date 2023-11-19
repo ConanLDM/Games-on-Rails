@@ -1,6 +1,6 @@
 # README
 
-# Rails 7 Video Games Project
+# Games on Rails
 
 This is a Rails 7 project with a central focus on video games.
 
