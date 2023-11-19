@@ -11,3 +11,4 @@ Much potential for future features including users sharing their recommendations
 Emphasis on Hotwire and vanilla JavaScript rather than an external framework.
 
 ## Working on how to import game information into the project.
+## Also implementing search functionality via Hotwire
