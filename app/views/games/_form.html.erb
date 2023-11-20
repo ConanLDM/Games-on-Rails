@@ -5,3 +5,11 @@
   <%# <%= f.input :main_image, as: :file %> %>
   <%# <%= f.button :submit %> %>
 <%# <% end %> %> %>
+
+<%= form_with model: @game do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :description %>
+  <%= f.text_area :review_scores %>
+  <%= f.file_field :main_image %>
+  <%= f.submit "Create" %>
+<% end %>
