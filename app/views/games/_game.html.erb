@@ -8,3 +8,9 @@
     No image available
   <% end %>
 </div>
+
+<div id="<%= dom_id game %>">
+  <p class="text-lg leading-loose">
+    <%= link_to game.title, game_path(game), class: "text-orange-600 underline hover:text-orange-700" %>
+  </p>
+</div>
