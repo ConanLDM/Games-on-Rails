@@ -1,15 +1,6 @@
-<%= form_with(model: @game, local: true) do |f| %>
-  <h1>Nintendo</h1>
 
-  <%= f.label :main_image %>
-  <%= f.file_field :main_image %>
-
-  <%= f.submit %>
 
   <%= search_input('text', 'Type to Search...') %>
-
-
-
 
   <ul class="card-container">
     <li class="card">1</li>
@@ -20,8 +11,9 @@
     <li class="card">6</li>
   </ul>
 
+
 <div class="loadingio-spinner-spinner-2pcnwbnmf5e"><div class="ldio-4vh0oxhxr1f">
 <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
 </div></div>
 
-<% end %>
+ <%= link_to "Homepage", homepage_path %>
