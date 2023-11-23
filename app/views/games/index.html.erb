@@ -9,7 +9,9 @@
         <% @games.each do |game| %>
           <%= render game %>
           <p>
+            <button class="learn-more">
             <%= link_to "Show this game", game %>
+            </button>
           </p>
         <% end %>
       </div>
@@ -19,6 +21,7 @@
           Add a new game</button>
         <%= render partial: "form", game: @game %>
       </div>
+      <%= link_to "Homepage", homepage_path %>
     </div>
   </div>
 </div>
