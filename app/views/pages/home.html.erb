@@ -1,9 +1,10 @@
- <h1>Welcome to the new Games Project</h1>
+ <h1>Welcome to Games on Rails</h1>
  <p>Now is <%= Time.now %></p>
 
 
 <%= link_to "All about Nintendo", nintendo_path %>
 <%= link_to "Games", index_path %>
+<%= link_to "About", about_path %>
 
 
 
@@ -12,21 +13,6 @@
     <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
   </svg>
 <% end %>
-
-<div data-controller="tabs" data-tabs-default-tab-value="two">
-  <button id="one" data-tabs-target="btn" data-action="click->tabs#select">Sony</button>
-  <button id="two" data-tabs-target="btn" data-action="click->tabs#select">Nintendo</button>
-  <button id="abc" data-tabs-target="btn" data-action="click->tabs#select">Microsoft</button>
-  <div data-tabs-target="tab" id="one">
-    PS4 preceded the PS5
-  </div>
-  <div data-tabs-target="tab" id="two">
-    3DS and Wii U preceded the Switch
-  </div>
-  <div data-tabs-target="tab" id="abc">
-    Xbox One S and X preceded the Series S and X
-  </div>
-</div>
 
 
 <p style="color: green"><%= notice %></p>

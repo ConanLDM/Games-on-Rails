@@ -1,15 +1,11 @@
-<%# <%= simple_form_for @game do |f| %>
-  <%# <%= f.input :title %> %>
-  <%# <%= f.input :description %> %>
-  <%# <%= f.input :review_scores %> %>
-  <%# <%= f.input :main_image, as: :file %> %>
-  <%# <%= f.button :submit %> %>
-<%# <% end %> %> %>
-
 <%= form_with model: @game do |f| %>
+  <%= f.label :title %>
   <%= f.text_field :title %>
+   <%= f.label :description %>
   <%= f.text_area :description %>
-  <%= f.text_area :review_scores %>
+  <%= f.label :review_scores %>
+  <%= f.number_field :review_scores %>
+  <%= f.label :main_image %>
   <%= f.file_field :main_image %>
   <%= f.submit "Create" %>
 <% end %>

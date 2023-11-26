@@ -14,6 +14,10 @@ class GamesController < ApplicationController
     @game = Game.new
   end
 
+  def edit
+    @restaurant = Restaurant.find(params[:id])
+  end
+
   def index
     if params[:query].present?
       @games = Game.where("title LIKE ?", "%#{params[:query]}%")
@@ -30,6 +34,10 @@ class GamesController < ApplicationController
         end
       end
     end
+  end
+
+  def show
+    @game = Game.find(params[:id])
   end
 
   private

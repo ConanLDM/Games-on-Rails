@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
         expect(subject).to eq("Mario Luigi")
       end
     end
-    
+
     context 'when a user has no last_name' do
       it "returns an error" do
         expect(subject).to raise_error(UserErrors::InvalidLastName)
