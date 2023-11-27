@@ -6,16 +6,12 @@ class GamesController < ApplicationController
       flash[:success] = "Game created successfully."
       redirect_to games_path
     else
-      render 'new'
+      render :new, status: :unprocessable_entity
     end
   end
 
   def new
     @game = Game.new
-  end
-
-  def edit
-    @restaurant = Restaurant.find(params[:id])
   end
 
   def index
@@ -40,9 +36,29 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
 
+  def edit
+    @game = Game.find(params[:id])
+  end
+
+  def update
+    @game = Game.find(params[:id])
+    if @game.update(game_params)
+      flash[:success] = "This game has been updated successfully."
+      redirect_to games_path(@game)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @game = Game.find(params[:id])
+    @game.destroy
+    redirect_to games_path, status: :see_other
+  end
+
   private
 
   def game_params
-    params.require(:game).permit(:title, :description, :review_scores, :main_image)
+    params.require(:game).permit(:title, :description, :game_scores, :main_image)
   end
 end

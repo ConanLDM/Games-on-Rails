@@ -1,12 +1,22 @@
 <div class="game">
   <h1><%= @game.title %></h1>
   <h2><%= @game.description %></h2>
-  <p>Review Scores: <%= @game.review_scores %></p>
+  <p>Game Review Score: <%= @game.review_scores %></p>
   <% if @game.main_image.attached? %>
     <%= image_tag @game.main_image, size: "250x400" %>
   <% else %>
      <%= image_tag("default.png", size: "250x400") %>
   <% end %>
 </div>
+
+<%= link_to "Edit", edit_game_path(@game.id) %>
+
+<li class="list-group-item">
+  <%= @game.title %>
+  <%= link_to "Delete",
+    game_path(@game),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</li>
 
 <%= link_to "Return to Games", index_path %>
