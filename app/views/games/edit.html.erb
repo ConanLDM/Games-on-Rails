@@ -1,0 +1,4 @@
+<%= form_with model: @game, url: game_path(@game), local: true do |f| %>
+  <%= render 'form' %>
+  <%= f.submit "Update Game" %>
+<% end %>
