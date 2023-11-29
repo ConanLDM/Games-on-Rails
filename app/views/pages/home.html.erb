@@ -2,12 +2,6 @@
  <p>Now is <%= Time.now %></p>
 
 
-<%= link_to "All about Nintendo", nintendo_path %>
-<%= link_to "Games", index_path %>
-<%= link_to "About", about_path %>
-<%= link_to "Delete", games_path(@game), method: :delete %>
-
-
 
 <%= link_to new_search_path, data: {turbo_frame: "modal"} do %>
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

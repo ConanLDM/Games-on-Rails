@@ -10,11 +10,13 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-trim: inline-end;
   display: flex;
 }
 
 li {
-  margin-right: 15px;
+  display: inline-block;
+  margin-inline-end: 1rem;
 }
 
 a {
