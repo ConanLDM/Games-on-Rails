@@ -113,6 +113,8 @@ GEM
     faker (3.2.2)
       i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
+    font-awesome-sass (6.5.0)
+      sassc (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -301,6 +303,7 @@ DEPENDENCIES
   debug
   factory_bot_rails
   faker
+  font-awesome-sass (~> 6.5.0)
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
