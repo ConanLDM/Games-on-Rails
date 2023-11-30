@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :find_game, only: [:show, :edit, :update, :destroy]
 
   def create
     @game = Game.new(game_params)
@@ -15,11 +16,7 @@ class GamesController < ApplicationController
   end
 
   def index
-    if params[:query].present?
-      @games = Game.where("title LIKE ?", "%#{params[:query]}%")
-    else
-      @games = Game.all
-    end
+    @pagy, @games = pagy(params[:query].present? ? Game.where("title LIKE ?", "%#{params[:query]}%") : Game.all, items: 5)
 
     respond_to do |format|
       format.html do
@@ -33,15 +30,12 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find(params[:id])
   end
 
   def edit
-    @game = Game.find(params[:id])
   end
 
   def update
-    @game = Game.find(params[:id])
     if @game.update(game_params)
       flash[:success] = "This game has been updated successfully."
       redirect_to games_path(@game)
@@ -51,7 +45,6 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    @game = Game.find(params[:id])
     @game.destroy
     redirect_to games_path, status: :see_other
   end
@@ -60,5 +53,9 @@ class GamesController < ApplicationController
 
   def game_params
     params.require(:game).permit(:title, :description, :review_scores, :main_image)
+  end
+
+  def find_game
+    @game = Game.find(params[:id])
   end
 end
