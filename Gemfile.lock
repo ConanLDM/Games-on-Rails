@@ -163,6 +163,7 @@ GEM
       stringio
       time
       uri
+    pagy (6.2.0)
     pandoc-ruby (2.1.9)
     pg (1.5.4)
     psych (5.1.1.1)
@@ -309,6 +310,7 @@ DEPENDENCIES
   jbuilder
   nokogiri (~> 1.15, >= 1.15.4)
   open-uri
+  pagy (~> 6.2)
   pandoc-ruby
   pg (~> 1.5.4)
   puma (~> 6.4.0)
