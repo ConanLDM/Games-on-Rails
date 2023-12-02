@@ -1,0 +1,11 @@
+#games {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.game-record {
+  border: 1px solid #000;
+  padding: 20px;
+  text-align: center;
+}

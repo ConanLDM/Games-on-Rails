@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @featured_games = Game.first(10)
   end
 
   def about
