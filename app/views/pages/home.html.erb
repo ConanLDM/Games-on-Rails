@@ -1,10 +1,11 @@
 <p>Now is <%= Time.now %></p>
 
+<p style="color: green"><%= notice %></p>
+
 <%= form_with(url: games_path, method: :get, data: {controller: "search-form", turbo_frame: "games", turbo_action: "advance"}) do |form| %>
   <%= form.label :query, "Search by game name:", class: "block mb-2" %>
   <div class="flex space-x-3">
     <%= form.text_field :query, class: "py-3 px-4 rounded border ring-0 focus:ring-4 focus:ring-orange-100 focus:shadow-none focus:border-orange-500 focus:outline-none", data: {action: "input->search-form#search"} %>
-
     <%= form.submit 'Search', class: "px-4 py-3 font-medium bg-orange-300 text-neutal-900 rounded flex items-center cursor-pointer hover:bg-orange-400 focus:ring-4 ring-0 focus:ring-orange-100" %>
   </div>
 <% end %>
@@ -14,14 +15,20 @@
   <%= render "games", games: @games %>
 </div>
 
-
-
-
-<%= link_to new_search_path, data: {turbo_frame: "modal"} do %>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-  </svg>
-<% end %>
-
+<h1>Featured Games</h1>
+<div class="featured-games">
+  <% @featured_games.each do |game| %>
+    <div class="game">
+      <h2><%= game.title %></h2>
+      <h3><%= game.description %></h3>
+      <p>Game Review Score: <%= game.review_scores %></p>
+      <% if game.main_image.attached? %>
+        <%= image_tag game.main_image, size: "250x400" %>
+      <% else %>
+        <%= image_tag("default.png", size: "250x400") %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
 <p style="color: green"><%= notice %></p>

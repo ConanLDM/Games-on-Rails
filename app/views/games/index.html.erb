@@ -14,13 +14,6 @@
           </p>
         <% end %>
       </div>
-
-      <div data-controller="toggle" class="mt-5">
-        <button data-action="click->toggle#fire" class="btn btn-outline-primary">
-          Add a new game</button>
-        <%= render partial: "form", game: @game %>
-      </div>
-      <%= link_to "Homepage", homepage_path %>
     </div>
   </div>
 

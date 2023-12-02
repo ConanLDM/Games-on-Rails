@@ -16,7 +16,7 @@ class GamesController < ApplicationController
   end
 
   def index
-    @pagy, @games = pagy(params[:query].present? ? Game.where("title LIKE ?", "%#{params[:query]}%") : Game.all, items: 5)
+    @pagy, @games = pagy(params[:query].present? ? Game.where("title LIKE ?", "%#{params[:query]}%") : Game.all, items: 10)
 
     respond_to do |format|
       format.html do
