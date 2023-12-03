@@ -29,3 +29,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+
+# images to not upload
+
+/db/images/mario_strikers.jpeg
+/db/images/mario_wonder.jpeg
