@@ -19,7 +19,7 @@
 <div class="featured-games">
   <% @featured_games.each do |game| %>
     <div class="game">
-      <h2><%= game.title %></h2>
+      <h2><%= link_to game.title, game_path(game) %></h2>
       <h3><%= game.description %></h3>
       <p>Game Review Score: <%= game.review_scores %></p>
       <% if game.main_image.attached? %>
@@ -30,5 +30,13 @@
     </div>
   <% end %>
 </div>
+
+<%= turbo_frame_tag "form" do %>
+  <%= form_tag root_path, method: :get, data: { controller: "dropdown", action: "change->dropdown#submit" } do %>
+    <%= select_tag :game, options_for_select([["Games List", link_to("Games List, index_path")], ["Option 2", 2], ["Option 3", 3]], @game&.id), prompt: "- Please select -" %>
+    <%= select_tag :post, options_for_select([["Post 1", 1], ["Post 2", 2], ["Post 3", 3]], @post&.id), prompt: "- Posts -" %>
+    <%= select_tag :review, options_for_select([["Review 1", 1], ["Review 2", 2], ["Review 3", 3]], @review&.id), prompt: "- Reviews -" %>
+  <% end %>
+<% end %>
 
 <p style="color: green"><%= notice %></p>

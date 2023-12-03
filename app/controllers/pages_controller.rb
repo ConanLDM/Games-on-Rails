@@ -9,6 +9,15 @@ class PagesController < ApplicationController
   def nintendo
   end
 
+  def comments
+    render partial: 'pages/comments', locals: { comments: @post.comments }
+  end
+
+  def show
+    @comments = Comment.all
+    render "pages/show"
+  end
+
   def update
     if @page.update(page_params)
       flash[:success] = "Page saved"

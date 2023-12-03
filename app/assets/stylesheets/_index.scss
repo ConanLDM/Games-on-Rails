@@ -5,7 +5,31 @@
 }
 
 .game-record {
-  border: 1px solid #000;
+  border: 1px solid #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+#posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.post-record {
+  border: 1px solid #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+#reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.review-record {
+  border: 1px solid #ffffff;
   padding: 20px;
   text-align: center;
 }

@@ -36,9 +36,10 @@ class GamesController < ApplicationController
   end
 
   def update
+    @game = Game.find(params[:id])
     if @game.update(game_params)
       flash[:success] = "This game has been updated successfully."
-      redirect_to games_path(@game)
+      redirect_to @game
     else
       render :edit, status: :unprocessable_entity
     end
