@@ -3,6 +3,8 @@
       <ul>
         <li><%= link_to "Homepage", homepage_path %></li>
         <li><%= link_to "Games List", index_path %></li>
+        <li><%= link_to "Posts", posts_path %></li>
+        <li><%= link_to "Reviews", reviews_path %></li>
       </ul>
     </div>
 
@@ -14,8 +16,9 @@
 
     <div class="right-nav">
       <ul>
-        <li><%= link_to "Add Game", new_game_path %>
+        <li><%= link_to "Add a Game", new_game_path %>
         <li><%= link_to "Delete a Game", games_path(@game), method: :delete %></li>
+        <li><%= link_to "Edit a Game", games_path(@game), method: :edit %></li>
       </ul>
     </div>
 </header>

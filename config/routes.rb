@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reviews
+  resources :posts
   resources :games
   resource :search, controller: "search"
 
@@ -13,4 +15,9 @@ Rails.application.routes.draw do
 
   get "nintendo", to: "games#nintendo", as: :nintendo
 
+
+  get :comments, to: 'posts#comments'
+
+  get "posts", to: "posts#index"
+  get "posts/:id", to: "posts#show"
 end

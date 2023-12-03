@@ -1,7 +1,7 @@
 <div class="game">
   <h2><%= game.title %></h2>
   <p><%= game.description %></p>
-  <p>Review Scores: <%= game.review_scores %></p>
+  <p>Review Score: <%= game.review_scores %></p>
   <% if game.main_image.attached? %>
     <%= image_tag game.main_image, size: "250x400" %>
   <% else %>
