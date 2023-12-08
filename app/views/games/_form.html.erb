@@ -4,9 +4,22 @@
     <input type="text" class="form-control" id="title" name="game[title]" placeholder="Enter the game title">
   </div>
 
-  <div class="form-group">
-    <label for="description">Description:</label>
-    <textarea class="form-control" id="description" name="game[description]" rows="5" placeholder="Provide a description of the game"></textarea>
+  <div data-controller="character-counter" data-character-counter-countdown-value="true">
+      <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea
+              data-character-counter-target="input"
+              maxlength="100"
+              class="form-control"
+              id="description"
+              name="game[description]"
+              rows="5"
+              placeholder="Provide a description of the game"
+          >
+              </textarea>
+
+          <p>There are <strong data-character-counter-target="counter"></strong> characters remaining.</p>
+      </div>
   </div>
 
   <div class="form-group">
