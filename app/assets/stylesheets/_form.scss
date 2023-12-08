@@ -1,0 +1,61 @@
+.create-game-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Form title */
+.create-game-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form label and input group */
+.form-group {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.form-label {
+  font-size: 16px;
+  font-weight: 800;
+  color: #007bff;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-control::placeholder {
+  color: #999;
+}
+
+/* Textarea styling */
+textarea.form-control {
+  font-size: 16px;
+  color: #333;
+}
+
+/* File input styling */
+input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Submit button */
+button {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #303030;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
