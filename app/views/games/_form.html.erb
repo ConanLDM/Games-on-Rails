@@ -1,6 +1,6 @@
 <%= form_with model: @game do |f| %>
   <div class="form-group">
-    <label for="title">Game Title:</label>
+    <h3 class="font-normal text-lg mb-6" label for="title">Game Title:</label></h3>
     <input type="text" class="form-control" id="title" name="game[title]" placeholder="Enter the game title">
   </div>
 
@@ -14,7 +14,7 @@
               id="description"
               name="game[description]"
               rows="5"
-              placeholder="Provide a description of the game"
+              placeholder="Provide a brief summary/description of the specific game"
           >
               </textarea>
 
@@ -32,5 +32,5 @@
     <input type="file" class="form-control" id="main_image" name="game[main_image]">
   </div>
 
-  <button type="submit" class="btn btn-primary btn-lg">Create</button>
+  <button type="submit" class= "btn btn--secondary">Submit Created Game</button>
 <% end %>

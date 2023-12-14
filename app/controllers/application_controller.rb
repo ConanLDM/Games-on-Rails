@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action -> { sleep 3 }
   include Pagy::Backend
   helper :search
   before_action :turbo_frame_request_variant
