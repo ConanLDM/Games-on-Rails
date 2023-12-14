@@ -1,16 +1,18 @@
-<div class="game">
-  <h2><%= game.title %></h2>
-  <p><%= game.description %></p>
-  <p>Review Score: <%= game.review_scores %></p>
-  <% if game.main_image.attached? %>
-    <%= image_tag game.main_image, size: "250x400" %>
-  <% else %>
-     <%= image_tag("default.png", size: "250x400") %>
-  <% end %>
-</div>
+<%= turbo_frame_tag dom_id(game) do %>
+  <div class="game">
+    <h2><%= game.title %></h2>
+    <p><%= game.description %></p>
+    <p>Review Score: <%= game.review_scores %></p>
+    <% if game.main_image.attached? %>
+      <%= image_tag game.main_image, size: "250x400" %>
+    <% else %>
+      <%= image_tag("default.png", size: "250x400") %>
+    <% end %>
+  </div>
 
-<div id="<%= dom_id game %>">
-  <p class="text-lg leading-loose">
-    <%= link_to game.title, game_path(game), class: "text-orange-600 underline hover:text-orange-700" %>
-  </p>
-</div>
+  <div id="<%= dom_id game %>">
+    <p class="text-lg leading-loose">
+      <%= link_to game.title, game_path(game), class: "text-orange-600 underline hover:text-orange-700" %>
+    </p>
+  </div>
+<% end %>

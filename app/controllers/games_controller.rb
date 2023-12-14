@@ -3,6 +3,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
+
     if @game.save
       flash[:success] = "Game created successfully."
       redirect_to games_path
@@ -18,7 +19,15 @@ class GamesController < ApplicationController
   def index
     @pagy, @games = pagy(params[:query].present? ? Game.where("title LIKE ?", "%#{params[:query]}%") : Game.all, items: 10)
 
+    if params[:query].present?
+      @games = Game.where("title LIKE ?", "%#{params[:query]}%")
+    else
+      @games = Game.all
+      @game = Game.new
+    end
+
     respond_to do |format|
+      format.turbo_stream
       format.html do
         if turbo_frame_request?
           render partial: "games", locals: { games: @games }
@@ -47,7 +56,8 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    @game.destroy
+    game = Game.find(params[:id])
+    game.destroy
     redirect_to games_path, status: :see_other
   end
 
