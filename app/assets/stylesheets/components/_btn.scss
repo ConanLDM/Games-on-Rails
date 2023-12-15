@@ -1,0 +1,26 @@
+// button {
+//   display: inline-block;
+//   background-color: #7b38d8;
+//   padding: 20px;
+//   width: 200px;
+//   color: #ffffff;
+//   text-align: center;
+//   transition: all 0.5s;
+// }
+
+// button:hover {
+//   background-color: #f7c2f9;
+// }
+
+// button::before {
+//   content: '\00bb';
+//   position: absolute;
+//   opacity: 0;
+//   top: 0;
+//   right: -20px;
+//   transition: 0.5s;
+// }
+// button:hover::before {
+//   opacity: 1;
+//   right: 0;
+// }

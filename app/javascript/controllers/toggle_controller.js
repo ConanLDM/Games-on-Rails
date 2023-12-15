@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import ToggleController from "./controllers/toggle_controller"
 
 export default class extends Controller {
   static targets = ["togglableElement"]
@@ -7,7 +8,7 @@ export default class extends Controller {
     console.log("Hello from toggle_controller")
   }
 
-  fire() {
+  fire(event) {
     this.togglableElementTarget.classList.toggle("d-none");
   }
 }

@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   resources :reviews
   resources :posts
-  resources :games
+  
+  resources :games do
+    collection do
+      post :preview
+    end
+  end
+
   resource :search, controller: "search"
 
   root to: "pages#home"

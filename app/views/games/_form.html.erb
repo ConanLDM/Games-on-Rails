@@ -1,36 +1,32 @@
-<%= form_with model: @game do |f| %>
+<%= form_with(model: @game, local: true) do |form| %>
   <div class="form-group">
-    <label for="title">Game Title:</label>
-    <input type="text" class="form-control" id="title" name="game[title]" placeholder="Enter the game title">
-  </div>
-
-  <div data-controller="character-counter" data-character-counter-countdown-value="true">
-      <div class="form-group">
-          <label for="description">Description:</label>
-          <textarea
-              data-character-counter-target="input"
-              maxlength="100"
-              class="form-control"
-              id="description"
-              name="game[description]"
-              rows="5"
-              placeholder="Provide a description of the game"
-          >
-              </textarea>
-
-          <p>There are <strong data-character-counter-target="counter"></strong> characters remaining.</p>
-      </div>
+    <%= form.label :title, "Game Title:" %>
+    <%= form.text_field :title, class: "form-control", id: "title", placeholder: "Enter the game title" %>
   </div>
 
   <div class="form-group">
-    <label for="review_scores">Score:</label>
-    <input type="number" class="form-control" id="review_scores" name="game[review_scores]" placeholder="Enter your game review score(0-100)">
+    <%= form.label :description, "Game Description:", style: "display: block" %>
+    <%= form.text_area :description, data: { "character-counter-target": "input" },
+    maxlength: 100, class: "form-control", id: "description", name: "game[description]",
+    rows: 5, placeholder: "Provide a brief summary/description of the specific game" %>
+    <p>There are <strong data-character-counter-target="counter"></strong> characters remaining.</p>
+    <div id="message_preview">
+      <!-- The preview will be shown here -->
+    </div>
+    <div>
+      <button type="button" data-action="click->form#preview">Preview Description</button>
+    </div>
   </div>
 
   <div class="form-group">
-    <label for="main_image">Game Image:</label>
-    <input type="file" class="form-control" id="main_image" name="game[main_image]">
+    <%= form.label :review_scores, "Score:" %>
+    <%= form.number_field :review_scores, class: "form-control", id: "review_scores", name: "game[review_scores]", placeholder: "Enter your game review score(0-100)" %>
   </div>
 
-  <button type="submit" class="btn btn-primary btn-lg">Create</button>
+  <div class="form-group">
+    <%= form.label :main_image, "Game Image:" %>
+    <%= form.file_field :main_image, class: "form-control", id: "main_image", name: "game[main_image]" %>
+  </div>
+
+  <button type="submit" class="btn btn-secondary">Submit Created Game</button>
 <% end %>

@@ -1,0 +1,7 @@
+<%= turbo_stream.update "game_preview" do %>
+  <%= @preview.description.length %>
+  <%= @preview.valid? %>
+  <%= @preview.errors.full_messages %>
+  <%= @preview.attributes %>
+  <%= simple_format @preview.description %>
+<% end %>

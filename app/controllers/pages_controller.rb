@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @featured_games = Game.first(10)
+    @featured_games = Game.order("RANDOM()").limit(10)
   end
 
   def about

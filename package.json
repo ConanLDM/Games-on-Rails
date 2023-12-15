@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "stimulus-carousel": "^5.0.1",
+    "stimulus-character-counter": "^4.2.0",
+    "stimulus-content-loader": "^4.2.0",
+    "stimulus-dropdown": "^2.1.0",
+    "stimulus-reveal-controller": "^4.1.0",
+    "stimulus-scroll-reveal": "^3.2.0"
+  }
+}
