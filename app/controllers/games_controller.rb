@@ -16,6 +16,13 @@ class GamesController < ApplicationController
     @game = Game.new
   end
 
+  def preview
+    # params.dig(:game, :description)
+    @preview = Game.new(game_params)
+
+    respond_to(&:turbo_stream)
+  end
+
   def index
     @pagy, @games = pagy(params[:query].present? ? Game.where("title LIKE ?", "%#{params[:query]}%") : Game.all, items: 10)
 
