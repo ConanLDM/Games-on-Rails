@@ -79,17 +79,14 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.0.3'
   gem "factory_bot_rails"
   gem 'shoulda-matchers'
+  gem "capybara"
+  gem "webdrivers"
+  gem "selenium-webdriver"
+  gem 'cuprite'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-end
-
-group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
 end
