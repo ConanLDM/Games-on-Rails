@@ -2,10 +2,6 @@ require "application_system_test_case"
 
 class GamesTest < ApplicationSystemTestCase
   include Rails.application.routes.url_helpers
-
-  def setup
-    @browser = Ferrum::Browser.new(process_timeout: 3) # Increase the timeout to 30 seconds
-  end
   test "visiting the index" do
     visit index_path
 
@@ -24,9 +20,5 @@ class GamesTest < ApplicationSystemTestCase
     click_on "Create Game"
 
     assert_text "Creating an Game"
-  end
-
-  def teardown
-    @browser.quit
   end
 end
