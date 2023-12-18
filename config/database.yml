@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: games_project_production
-  username: games_project
-  password: <%= ENV["GAMES_PROJECT_DATABASE_PASSWORD"] %>
+    url: <%= ENV['DATABASE_URL'] %>
