@@ -11,10 +11,13 @@
 </div>
 
 <li class="list-group-item">
-  <%= link_to "Delete",
-    game_path(@game),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
+  <div data-turbo="false">
+    <%= link_to "Delete",
+      game_path(@game),
+      method: :delete,
+      data: { turbo_confirm: "Are you sure?" }
+    %>
+  </div>
   <%= link_to "Edit", edit_game_path(@game) %>
 </li>
 

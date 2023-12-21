@@ -1,0 +1,11 @@
+<%= turbo_stream.replace "games" do %>
+ <div id="games">
+   <% @games.each do |game| %>
+     <p>
+       <button class="learn-more">
+         <%= render game %>
+       </button>
+     </p>
+   <% end %>
+ </div>
+<% end %>

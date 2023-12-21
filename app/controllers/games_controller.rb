@@ -50,11 +50,11 @@ class GamesController < ApplicationController
   end
 
   def edit
-    @game = Game.find(params[:id])
+    @game = Game.friendly.find(params[:id])
   end
 
   def update
-    @game = Game.find(params[:id])
+    @game = Game.friendly.find(params[:id])
     if @game.update(game_params)
       flash[:success] = "This game has been updated successfully."
       redirect_to @game
@@ -64,9 +64,13 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    game = Game.find(params[:id])
+    game = Game.friendly.find(params[:id])
     game.destroy
-    redirect_to games_path, status: :see_other
+    if params[:from] == 'list'
+      redirect_to games_path, status: :see_other
+    else
+      redirect_to root_path, status: :see_other
+    end
   end
 
   private
@@ -77,5 +81,7 @@ class GamesController < ApplicationController
 
   def find_game
     @game = Game.friendly.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to games_path
   end
 end
