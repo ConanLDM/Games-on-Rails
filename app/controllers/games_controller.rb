@@ -46,6 +46,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    @game = Game.friendly.find(params[:id])
   end
 
   def edit
@@ -75,6 +76,6 @@ class GamesController < ApplicationController
   end
 
   def find_game
-    @game = Game.find(params[:id])
+    @game = Game.friendly.find(params[:id])
   end
 end
