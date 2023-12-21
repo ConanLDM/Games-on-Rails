@@ -64,12 +64,13 @@ gem 'simple_form'
 gem 'bundler-audit'
 
 # fontawesome for icons such as the gamepoad
-
 gem "font-awesome-sass", "~> 6.5.0"
 
 # For pagination and less rcords appearing per page
-
 gem 'pagy', '~> 6.2'
+
+# For records showing their titles instead of record ID's
+gem 'friendly_id', '~> 5.4.0'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -92,3 +93,5 @@ group :development, :test do
 end
 
 gem "dockerfile-rails", ">= 1.6", :group => :development
+
+gem "kamal", "~> 1.3"
