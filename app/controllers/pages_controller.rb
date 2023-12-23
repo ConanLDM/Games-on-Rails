@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :home
+  
   def home
     @featured_games = Game.order("RANDOM()").limit(10)
   end
