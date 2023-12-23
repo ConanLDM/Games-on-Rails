@@ -112,12 +112,22 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-security (0.18.0)
+      devise (>= 4.3.0)
     diff-lcs (1.5.0)
+    docile (1.4.0)
     dockerfile-rails (1.6.0)
       rails (>= 3.0.0)
     dotenv (2.8.1)
     drb (2.1.1)
       ruby2_keywords
+    easy_captcha (0.6.5)
+      bundler (>= 1.1.0)
+      rails (>= 3.0.0)
+      rmagick (>= 2.13.1)
+      rspec-rails (>= 2.8.1)
+      simplecov (>= 0.3.8)
+      yard (>= 0.7.0)
     ed25519 (1.3.0)
     erubi (1.12.0)
     factory_bot (6.2.1)
@@ -202,6 +212,7 @@ GEM
     pagy (6.2.0)
     pandoc-ruby (2.1.9)
     pg (1.5.4)
+    pkg-config (1.5.6)
     psych (5.1.1.1)
       stringio
     public_suffix (5.0.3)
@@ -255,6 +266,8 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.6)
+    rmagick (5.3.0)
+      pkg-config (~> 1.4)
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.3)
@@ -293,6 +306,12 @@ GEM
     simple_form (5.3.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -336,6 +355,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    yard (0.9.34)
     zeitwerk (2.6.12)
 
 PLATFORMS
@@ -348,7 +368,9 @@ DEPENDENCIES
   cuprite
   debug
   devise
+  devise-security
   dockerfile-rails (>= 1.6)
+  easy_captcha
   factory_bot_rails
   faker
   font-awesome-sass (~> 6.5.0)
@@ -364,6 +386,7 @@ DEPENDENCIES
   pg (~> 1.5.4)
   puma (~> 6.4.0)
   rails (~> 7.1)
+  rmagick
   rspec-rails (~> 6.0.3)
   sassc-rails
   selenium-webdriver

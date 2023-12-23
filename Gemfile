@@ -75,6 +75,12 @@ gem 'friendly_id', '~> 5.4.0'
 # For authenticaton
 gem 'devise'
 
+# For further Devise configuration and security
+gem 'devise-security'
+
+# For additional authentication
+gem 'easy_captcha'
+gem 'rmagick'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
