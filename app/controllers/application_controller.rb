@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  # reset captcha code after each request for security
+  after_action :reset_last_captcha_code!
+
   include Pagy::Backend
   helper :search
   before_action :authenticate_user!
