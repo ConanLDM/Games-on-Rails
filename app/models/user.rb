@@ -1,5 +1,9 @@
 class User < ApplicationRecord
-  validates :email, presence: true, uniqueness: { case_sensitive: false }
+  # Include default devise modules. Others available are:
+  # :confirmable,:trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,
+         :lockable,:timeoutable
   has_many :posts
 
   def full_name
