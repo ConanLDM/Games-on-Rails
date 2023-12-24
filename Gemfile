@@ -78,9 +78,8 @@ gem 'devise'
 # For further Devise configuration and security
 gem 'devise-security'
 
-# For additional authentication
-gem 'easy_captcha'
-gem 'rmagick'
+# For the removal fo leftover code
+gem 'leftovers', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
