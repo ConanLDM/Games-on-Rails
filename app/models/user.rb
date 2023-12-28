@@ -6,7 +6,7 @@ class User < ApplicationRecord
   # :session_limitable, :expirable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :timeoutable
+         :timeoutable, :uncommon_password
   has_many :posts
 
   def full_name

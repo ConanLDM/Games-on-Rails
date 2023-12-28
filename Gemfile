@@ -78,6 +78,9 @@ gem 'devise'
 # For further Devise configuration and security
 gem 'devise-security'
 
+# For restricting users from using commonly used passwords
+gem 'devise-uncommon_password'
+
 # For the removal fo leftover code
 gem 'leftovers', require: false
 

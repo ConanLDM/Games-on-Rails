@@ -60,6 +60,7 @@ en:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
       confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      common_password: 'is a very common password. Please choose something harder to guess.'
       expired: "has expired, please request a new one"
       password_too_short: "must be at least %{count} characters"
       password_too_long: "must be at most %{count} characters"
