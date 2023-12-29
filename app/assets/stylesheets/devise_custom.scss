@@ -1,0 +1,36 @@
+.form-inputs {
+  input[type=text], input[type=password] {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+ }
+
+.form-actions {
+  button {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 10px;
+    border: none;
+    background-color: #3F51B5;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 100%;
+  }
+}
+
+ @media (max-width: 768px) {
+  .container-login, .container-signup, .forgetPW {
+    left: 10%;
+    width: 80%;
+    max-width: none;
+  }
+ }
+
+.form-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
