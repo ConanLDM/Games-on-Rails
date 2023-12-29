@@ -1,21 +1,25 @@
 <h2>Log in</h2>
 
-<%= form_with model: resource, as: resource_name, url: session_path(resource_name) do |f| %>
-  <div class="form-inputs">
-    <%= f.label :email %>
-    <%= f.email_field :email, required: false, autofocus: true, autocomplete: "email" %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password, required: false, autocomplete: "current-password" %>
-
-    <% if devise_mapping.rememberable? %>
-      <%= f.label :remember_me %>
-      <%= f.check_box :remember_me %>
-    <% end %>
+<%= form_with model: resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal" } do |f| %>
+  <div class="form-group">
+    <%= f.label :email, class: "control-label" %>
+    <%= f.email_field :email, required: false, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 
-  <div class="form-actions">
-    <%= f.submit "Log in" %>
+  <div class="form-group">
+    <%= f.label :password, class: "control-label" %>
+    <%= f.password_field :password, required: false, autocomplete: "current-password", class: "form-control" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="form-group">
+      <%= f.label :remember_me, class: "control-label" %>
+      <%= f.check_box :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.submit "Log in", class: "btn btn-primary" %>
   </div>
 <% end %>
 
