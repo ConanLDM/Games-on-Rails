@@ -84,6 +84,12 @@ gem 'devise-uncommon_password'
 # For the removal fo leftover code
 gem 'leftovers', require: false
 
+# Administration platform
+gem "administrate"
+
+# For Administrate running with ActiveStorage
+gem "administrate-field-active_storage"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
