@@ -16,12 +16,13 @@ class UserDashboard < Administrate::BaseDashboard
     encrypted_password: Field::String,
     first_name: Field::String,
     last_name: Field::String,
-    posts: Field::HasMany,
     remember_created_at: Field::DateTime,
     reset_password_sent_at: Field::DateTime,
     reset_password_token: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    password: PasswordField,
+    password_confirmation: PasswordField
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -47,7 +48,6 @@ class UserDashboard < Administrate::BaseDashboard
     encrypted_password
     first_name
     last_name
-    posts
     remember_created_at
     reset_password_sent_at
     reset_password_token
@@ -62,14 +62,8 @@ class UserDashboard < Administrate::BaseDashboard
     admin
     approved
     email
-    email_confirmed
-    encrypted_password
-    first_name
-    last_name
-    posts
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
+    password
+    password_confirmation
   ].freeze
 
   # COLLECTION_FILTERS
