@@ -26,6 +26,7 @@ class GameDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    title
     description
     image
     main_image
@@ -35,12 +36,12 @@ class GameDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    title
     description
     image
     main_image
     review_scores
     slug
-    title
     created_at
     updated_at
   ].freeze
@@ -49,12 +50,12 @@ class GameDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    title
     description
     image
     main_image
     review_scores
     slug
-    title
   ].freeze
 
   # COLLECTION_FILTERS
