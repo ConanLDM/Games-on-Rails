@@ -10,4 +10,4 @@ Much potential for future features including users sharing their recommendations
 
 Emphasis on Hotwire and vanilla JavaScript rather than an external framework (contains no Bootstrap, Bulma or the likes of React or Tailwind).
 
-Authentication by Devise.
+Authentication by Devise and Administration by Administrate.
