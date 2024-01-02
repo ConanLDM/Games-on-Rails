@@ -2,6 +2,11 @@
   <%= turbo_stream_from @game %>
   <h1><%= @game.title %></h1>
   <h2><%= @game.description %></h2>
+   <% if @game.genre %>
+    <p>Genre: <%= @game.genre.name %></p>
+  <% else %>
+    <p>Genre: TBC </p>
+  <% end %>
   <p>Game Review Score: <%= @game.review_scores %></p>
   <% if @game.main_image.attached? %>
     <%= image_tag @game.main_image, size: "500x800" %>

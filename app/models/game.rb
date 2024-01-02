@@ -7,5 +7,7 @@ class Game < ApplicationRecord
   validates :review_scores, presence: true
   has_one_attached :main_image
 
+  belongs_to :genre
+
   broadcasts_refreshes
- end
+end
