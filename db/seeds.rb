@@ -46,4 +46,8 @@ Post.create(title: "Fifth post", body: "This is the fifth post body")
                   rating: 5)
 end
 
-puts "Game Reviews generated!"
+Genre.create(name: 'Action')
+Genre.create(name: 'Adventure')
+Genre.create(name: 'Role-Playing')
+
+puts "Games, Post and Game Reviews have been generated!"
