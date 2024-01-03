@@ -7,6 +7,24 @@
 
         <h1>All Games</h1>
 
+      <%= form_tag(games_path, method: "get", remote: true) do %>
+          <div>
+            <%= radio_button_tag(:genre, "all", true) %>
+            <%= label_tag(:genre, "All") %>
+
+            <%= radio_button_tag(:genre, "action") %>
+            <%= label_tag(:genre, "Action") %>
+
+            <%= radio_button_tag(:genre, "adventure") %>
+            <%= label_tag(:genre, "Adventure") %>
+
+            <%= radio_button_tag(:genre, "role-playing") %>
+            <%= label_tag(:genre, "Role-Playing") %>
+
+            <%= submit_tag("Filter") %>
+          </div>
+      <% end %>
+
         <div id="games">
           <% @games.each do |game| %>
             <p>
