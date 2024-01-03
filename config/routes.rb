@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   resource :search, controller: "search"
 
+  resources :genres
+
   root to: "pages#home"
 
   get "home", to: 'pages#home', as: :homepage

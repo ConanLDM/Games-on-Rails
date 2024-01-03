@@ -8,6 +8,11 @@
     <% else %>
       <%= image_tag("default.png", size: "250x400") %>
     <% end %>
+    <% if game.genre %>
+      <p>Genre: <%= game.genre.name %></p>
+    <% else %>
+      <p>Genre: To be confirmed</p>
+    <% end %>
   </div>
 
   <div id="<%= dom_id game %>">
