@@ -11,6 +11,8 @@ RSpec.describe Game, type: :model do
   it "is valid with valid attributes" do
     subject.title = "Anything"
     subject.description = "Anything"
+    subject.genre = Genre.create!(attributes_for(:genre))
+    expect(subject).to be_valid
   end
 
 
@@ -23,4 +25,6 @@ RSpec.describe Game, type: :model do
     subject.description = nil
     expect(subject).to_not be_valid
   end
+
+  it { is_expected.to belong_to(:genre) }
 end

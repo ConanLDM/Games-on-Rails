@@ -93,8 +93,6 @@ gem "administrate-field-active_storage"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
-  # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'web-console'
   gem 'rspec-rails', '~> 6.0.3'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
@@ -110,6 +108,10 @@ group :development, :test do
   # gem "spring"
 end
 
-gem 'dockerfile-rails', '>= 1.6', :group => :development
+group :development do
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'web-console'
 
-gem 'kamal', '~> 1.3'
+  gem 'dockerfile-rails', '>= 1.6'
+  gem 'kamal', '~> 1.3'
+end

@@ -40,7 +40,6 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.include FactoryBot::Syntax::Methods
-  FactoryBot.find_definitions
   FactoryBot.definition_file_paths = [File.expand_path('../factories', __FILE__)]
 
 
