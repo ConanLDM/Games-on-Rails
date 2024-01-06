@@ -1,6 +1,6 @@
 <%= turbo_frame_tag dom_id(game) do %>
   <div class="game">
-    <h2><%= game.title %></h2>
+    <h2><%= link_to game.title, game_path(game), data: { turbo_frame: "_top" } %></h2>
     <p><%= game.description %></p>
     <p>Review Score: <%= game.review_scores %></p>
     <% if game.main_image.attached? %>
@@ -13,11 +13,5 @@
     <% else %>
       <p>Genre: To be confirmed</p>
     <% end %>
-  </div>
-
-  <div id="<%= dom_id game %>">
-    <p class="text-lg leading-loose">
-      <%= link_to game.title, game_path(game), class: "text-orange-600 underline hover:text-orange-700" %>
-    </p>
   </div>
 <% end %>

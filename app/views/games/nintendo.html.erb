@@ -2,12 +2,3 @@
 <h2>Nintendo's wide variety of games!</h2>
 
 <%= render "games/nintendo/nintendo_content" %>
-
-<% if @games.present? %>
-  <% @games.each do |game| %>
-    <li class="card">
-      <%= game.title %> </li>
-  <% end %>
-<% else %>
-  <p>If this message is showing, no games have been found.</p>
-<% end %>

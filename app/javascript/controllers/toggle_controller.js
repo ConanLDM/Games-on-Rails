@@ -1,4 +1,4 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "stimulus"
 import ToggleController from "./controllers/toggle_controller"
 
 export default class extends Controller {

@@ -2,8 +2,6 @@
 
 <ul class="card-container">
   <% @games.each do |game| %>
-    <li class="card">
-      <%= render "game", game: game %>
-    </li>
+    <%= render "game", game: game %>
   <% end %>
 </ul>
