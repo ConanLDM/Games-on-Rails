@@ -7,7 +7,7 @@
 
         <h1>All Games</h1>
 
-      <%= form_tag(games_path, method: "get", remote: true) do %>
+      <%= form_tag(games_path, data: { turbo_frame: "_top" }, method: "get", remote: true) do %>
           <div>
             <%= radio_button_tag(:genre, "all", true) %>
             <%= label_tag(:genre, "All") %>
