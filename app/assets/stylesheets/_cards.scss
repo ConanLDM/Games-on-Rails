@@ -1,20 +1,17 @@
 .card {
   --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
-  width: 200px; /* Adjusted width for a more balanced layout */
-  height: 300px; /* Adjusted height for better visibility */
-  padding: 15px; /* Increased padding for better spacing */
+  width: 200px;
+  height: 300px;
+  padding: 15px;
   border-radius: 1rem;
-  overflow: hidden; /* Changed to hidden for a cleaner look */
+  overflow: hidden;
   background: var(--background);
-  position: relative;
-  flex: 0 0 30%;
-  max-width: 30%;
   transition: transform 0.3s;
 }
 
- .card-container {
+.card-container {
   display: flex;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
   justify-content: center;
@@ -25,7 +22,7 @@
   transition: opacity 0.5s, transform 0.5s;
 }
 
- .card-info {
+.card-info {
   --color: #181818;
   background: var(--color);
   color: var(--color);
@@ -36,19 +33,18 @@
   height: 100%;
   overflow: visible;
   border-radius: .7rem;
- }
+}
 
- .card .title {
+.card .title {
   font-weight: bold;
   letter-spacing: .1em;
- }
+}
 
- /*Hover*/
- .card:hover::after {
+.card:hover::after {
   opacity: 0;
- }
+}
 
- .card:hover .card-info {
+.card:hover .card-info {
   color: #f7ba2b;
   transition: color 1s;
- }
+}

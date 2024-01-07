@@ -1,7 +1,9 @@
 <p>The best of Mario from Nintendo!</p>
 
-<ul class="card-container">
-  <% @games.each do |game| %>
-    <%= render "game", game: game %>
-  <% end %>
-</ul>
+<div class="flex-container">
+  <ul class="card-container">
+    <% @games.each do |game| %>
+      <%= render "game", game: game %>
+    <% end %>
+  </ul>
+</div>
