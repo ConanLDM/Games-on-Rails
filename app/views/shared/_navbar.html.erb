@@ -1,11 +1,19 @@
 <header>
     <div class="left-nav">
-      <ul>
-        <li><%= link_to "Homepage", homepage_path %></li>
-        <li><%= link_to "Games List", index_path %></li>
-        <li><%= link_to "Posts", posts_path %></li>
-        <li><%= link_to "Reviews", reviews_path %></li>
-      </ul>
+      <div data-controller="dropdown" data-dropdown-open-value="false" data-dropdown-opened-class="bg-slate-300">
+        <button data-dropdown-target="activated" data-action="click->dropdown#toggleDropdown">
+          Key Pages
+        </button>
+
+        <div data-dropdown-target="dropdownContent" class="bg-red-500 fixed p-4 rounded-md">
+          <ul>
+            <li><%= link_to "Homepage", homepage_path %></li>
+            <li><%= link_to "Games List", index_path %></li>
+            <li><%= link_to "Posts", posts_path %></li>
+            <li><%= link_to "Reviews", reviews_path %></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="middle-nav">
@@ -15,10 +23,18 @@
     </div>
 
     <div class="right-nav">
-      <ul>
-        <li><%= link_to "Add a Game", new_game_path %>
-        <li><%= link_to "Delete a Game", games_path(@game), method: :delete %></li>
-        <li><%= link_to "Edit a Game", games_path(@game), method: :edit %></li>
-      </ul>
+      <div data-controller="dropdown" data-dropdown-open-value="false" data-dropdown-opened-class="bg-slate-300">
+        <button data-dropdown-target="activated" data-action="mouseenter->dropdown#toggleDropdown mouseleave->dropdown#toggleDropdown">
+          Game Actions
+        </button>
+
+        <div data-dropdown-target="dropdownContent" class="bg-red-500 fixed p-4 rounded-md">
+          <ul>
+            <li><%= link_to "Add a Game", new_game_path %>
+            <li><%= link_to "Delete a Game", games_path(@game), method: :delete %></li>
+            <li><%= link_to "Edit a Game", games_path(@game), method: :edit %></li>
+          </ul>
+        </div>
+      </div>
     </div>
 </header>
