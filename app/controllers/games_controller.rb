@@ -75,7 +75,7 @@ class GamesController < ApplicationController
   end
 
   def nintendo
-    @games = Game.where("title LIKE ?", "%Mario%") 
+    @games = Game.where("title LIKE ?", "%Mario%")
   end
 
   private
