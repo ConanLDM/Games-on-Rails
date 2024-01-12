@@ -17,3 +17,5 @@ pin "stimulus-use", to: "https://ga.jspm.io/npm:stimulus-use@0.51.3/dist/index.j
 pin "stimulus-reveal-controller", to: "https://ga.jspm.io/npm:stimulus-reveal-controller@4.1.0/dist/stimulus-reveal-controller.mjs"
 pin "stimulus-scroll-reveal", to: "https://ga.jspm.io/npm:stimulus-scroll-reveal@3.2.0/dist/stimulus-scroll-reveal.mjs"
 
+pin "trix"
+pin "@rails/actiontext", to: "actiontext.js"

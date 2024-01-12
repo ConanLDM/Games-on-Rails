@@ -2,6 +2,9 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
+import "trix"
+import "@rails/actiontext"
+
 // import 'swiper/css/bundle';
 // import { Application } from '@hotwired/stimulus'
 // import ContentLoader from 'stimulus-content-loader'
