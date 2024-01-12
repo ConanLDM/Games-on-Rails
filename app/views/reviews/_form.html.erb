@@ -1,8 +1,10 @@
-<%= form_with model: @game do |f| %>
+<%= form_with model: @review do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
    <%= f.label :body %>
   <%= f.text_area :body %>
+  <%= f.label :review %>
+  <%= f.rich_text_area :review %>
   <%= f.label :rating %>
   <%= f.number_field :rating %>
   <%= f.submit "Create" %>
