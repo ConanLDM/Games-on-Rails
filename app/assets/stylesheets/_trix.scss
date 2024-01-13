@@ -1,0 +1,15 @@
+// Change the background color of the buttons
+trix-toolbar .trix-button-group button {
+  background-color: rgb(255, 255, 255);
+}
+
+// Remove the bold button icon
+trix-toolbar .trix-button-group button.trix-button--icon-bold::before {
+  background-image: none;
+}
+
+// Change the background color of the Trix editor
+.trix-content {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
