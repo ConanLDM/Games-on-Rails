@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     collection do
       post :preview
     end
+
+    resources :comments, only: %i[create]
   end
 
   resource :search, controller: "search"

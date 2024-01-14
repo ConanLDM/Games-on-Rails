@@ -13,6 +13,12 @@
   <% else %>
      <%= image_tag("default.png", size: "500x800") %>
   <% end %>
+
+  <%= render partial: "comments/form", locals: { comment: Comment.new } %>
+  <%= turbo_stream_from @game, :comments %>
+  <div id="<%= "#{dom_id(@game)}_comments" %>">
+    <%= render @game.comments.order(created_at: :desc) %>
+  </div>
 </div>
 
 <li class="list-group-item">
