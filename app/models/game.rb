@@ -8,6 +8,7 @@ class Game < ApplicationRecord
   has_one_attached :main_image
 
   belongs_to :genre, optional: true
+  has_many :comments, dependent: :destroy
 
   broadcasts_refreshes
 end
