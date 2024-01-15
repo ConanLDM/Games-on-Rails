@@ -358,7 +358,7 @@ GEM
     time (0.2.2)
       date
     timeout (0.4.0)
-    turbo-rails (2.0.0.pre.beta.1)
+    turbo-rails (2.0.0.pre.beta.2)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
@@ -424,7 +424,7 @@ DEPENDENCIES
   simple_form
   sprockets-rails
   stimulus-rails
-  turbo-rails (~> 2.0.0.pre.beta)
+  turbo-rails (~> 2.0.0.pre.beta.2)
   tzinfo-data
   web-console
   webdrivers
