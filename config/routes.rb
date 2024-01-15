@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       post :preview
     end
 
-    resources :comments, only: %i[create]
+    resources :comments
   end
 
   resource :search, controller: "search"
