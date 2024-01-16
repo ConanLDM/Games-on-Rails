@@ -1,5 +1,7 @@
 <%= turbo_stream_from @game %>
-<div id="<%= dom_id(comment) %>">
-  <%= comment.body %>
-  <%= link_to "Delete", game_comment_path(comment.game, comment), data: { "turbo-method": :delete } %>
+
+<div id="<%= dom_id(comment) %>" class="comment">
+  <p class="comment-body"><%= comment.body %></p>
+  <%= button_to "Delete", game_comment_path(comment.game, comment), remote: true, method: :delete,
+   class: "comment-delete-link" %>
 </div>
