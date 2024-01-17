@@ -1,0 +1,25 @@
+<%= turbo_stream_from @game %>
+
+<div id="<%= dom_id(comment) %>" class="comment">
+  <p class="comment-body"><%= comment.body %></p>
+  <%= button_to "Delete", game_comment_path(comment.game, comment), remote: true, method: :delete,
+   class: "comment-delete-link" %>
+</div>
+
+<% comment.replies.each do |reply| %>
+  <div class="comment-reply">
+    <p class="comment-reply-body"><%= reply.body %></p>
+    <%= button_to "Delete", game_comment_path(reply.game, reply), remote: true, method: :delete,
+     class: "comment-delete-link" %>
+  </div>
+<% end %>
+
+<%= form_with(model: [comment.game, comment.replies.build], remote: true) do |form| %>
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, rows: 2 %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Reply", class: "btn btn-primary" %>
+  </div>
+<% end %>

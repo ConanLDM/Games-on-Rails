@@ -1,7 +1,18 @@
 <%= turbo_stream_from @game %>
 
 <div id="<%= dom_id(comment) %>" class="comment">
-  <p class="comment-body"><%= comment.body %></p>
+  <div class="comment">
+    <%= comment.body %>
+    <% comment.replies.each do |reply| %>
+      <div class="reply">
+        <blockquote>
+          <%= reply.comment.body %>
+        </blockquote>
+        <%= reply.body %>
+        <%= render partial: "comments/comment", locals: { comment: reply } %>
+      </div>
+    <% end %>
+  </div>
   <%= button_to "Delete", game_comment_path(comment.game, comment), remote: true, method: :delete,
    class: "comment-delete-link" %>
 </div>
