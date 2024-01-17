@@ -14,6 +14,7 @@
   <% end %>
 
   <%= render partial: "comments/form", locals: { comment: Comment.new } %>
+  <%= render partial: "comments/replies", collection: @game.comments, as: :comment %>
   <%= turbo_stream_from @game, :comments %>
   <div id="<%= "#{dom_id(@game)}_comments" %>">
     <%= render @game.comments.order(created_at: :desc) %>

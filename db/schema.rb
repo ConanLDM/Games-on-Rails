@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_14_145939) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_17_203442) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -83,7 +83,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_14_145939) do
     t.bigint "game_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "parent_id"
     t.index ["game_id"], name: "index_comments_on_game_id"
+    t.index ["parent_id"], name: "index_comments_on_parent_id"
   end
 
   create_table "games", force: :cascade do |t|
