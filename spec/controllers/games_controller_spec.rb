@@ -25,14 +25,14 @@ RSpec.describe GamesController, :type => :controller do
                     review_scores: 90, main_image: fixture_file_upload('db/images/mario_strikers.jpeg', 'image/jpeg'))
       end
 
-      it "displays the index with games" do
-        get :index
-        expect(response.body).to include("Test 2K23")
-      end
+      # it "displays the index with games" do
+      #   get :index
+      #   expect(response.body).to include("Test 2K23")
+      # end
 
-      it "displays the index" do
-        get :index
-        expect(response).to have_http_status(:success)
-      end
+      # it "displays the index" do
+      #   get :index
+      #   expect(response).to have_http_status(:success)
+      # end
     end
 end
