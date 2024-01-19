@@ -30,6 +30,13 @@
   <% end %>
 </div>
 
+<div class="featured-reviews">
+  <% @featured_reviews.each do |review| %>
+    <h2><%= review.title %></h2>
+    <p><%= review.content %></p>
+  <% end %>
+</div>
+
 <p style="color: green"><%= notice %></p>
 
 <%= turbo_frame_tag "form" do %>

@@ -41,13 +41,16 @@ Post.create(title: "Fourth post", body: "This is the fourth post body")
 Post.create(title: "Fifth post", body: "This is the fifth post body")
 
 10.times do
-  Review.create!(title: "Great game",
-                  body: "I really enjoyed playing this game",
-                  rating: 5)
+  Review.create!(
+    title: Faker::Lorem.sentence(word_count: 3),
+    body: Faker::Lorem.paragraph(sentence_count: 1),
+    content: Faker::Lorem.paragraph(sentence_count: 3),
+    rating: rand(1..5)
+  )
 end
 
 Genre.create(name: 'Action')
 Genre.create(name: 'Adventure')
 Genre.create(name: 'Role-Playing')
 
-puts "Games, Post and Game Reviews have been generated!"
+puts "Games, Post, Genres and Game Reviews have been generated!"
