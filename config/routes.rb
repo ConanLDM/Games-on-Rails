@@ -34,7 +34,6 @@ Rails.application.routes.draw do
 
   get "nintendo", to: "games#nintendo", as: :nintendo
 
-
   get :comments, to: 'posts#comments'
 
   get "posts", to: "posts#index"
