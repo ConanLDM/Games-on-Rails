@@ -3,7 +3,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["dropdownContent", "openButton", "closeButton", "active"]
   static values = { open: Boolean }
-  static classes = ["opened"]
 
   connect() {
     if (this.openValue) {
@@ -11,39 +10,26 @@ export default class extends Controller {
     } else {
       this.closeDropdown()
     }
-    // this.dropdownContentTarget.hidden = true
-    // this.closeButtonTarget.hidden = true
-    // console.log("hello")
   }
 
   toggleDropdown() {
-    if (this.dropdownContentTarget.hidden == true) {
-      this.openDropdown()
-    } else {
-      this.closeDropdown()
-    }
+    this.dropdownContentTarget.classList.toggle("hidden")
+    this.openButtonTarget.classList.toggle("hidden")
+    this.closeButtonTarget.classList.toggle("hidden")
+    this.activeTarget.classList.toggle("bg-zinc-400")
   }
 
   openDropdown() {
-    this.dropdownContentTarget.hidden = false
-    try {
-    this.openButtonTarget.hidden = true
-    this.closeButtonTarget.hidden = false } catch {}
-    try {
-      // this.activeTarget.classList.add("bg-zinc-400")
-      this.activeTarget.classList.add(this.openedClass)
-    } catch {}
+    this.dropdownContentTarget.classList.remove("hidden")
+    this.openButtonTarget.classList.add("hidden")
+    this.closeButtonTarget.classList.remove("hidden")
+    this.activeTarget.classList.add("bg-zinc-400")
   }
 
   closeDropdown() {
-    this.dropdownContentTarget.hidden = true
-    try {
-    this.openButtonTarget.hidden = false
-    this.closeButtonTarget.hidden = true } catch {}
-    try {
-      // this.activeTarget.classList.remove("bg-zinc-400")
-      this.activeTarget.classList.remove(this.openedClass)
-    } catch {}
+    this.dropdownContentTarget.classList.add("hidden")
+    this.openButtonTarget.classList.remove("hidden")
+    this.closeButtonTarget.classList.add("hidden")
+    this.activeTarget.classList.remove("bg-zinc-400")
   }
-
 }
