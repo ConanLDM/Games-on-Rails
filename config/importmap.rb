@@ -19,3 +19,5 @@ pin "stimulus-scroll-reveal", to: "https://ga.jspm.io/npm:stimulus-scroll-reveal
 
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.js"
+pin "@hotwired/stimulus", to: "stimulus.min.js"
+pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
