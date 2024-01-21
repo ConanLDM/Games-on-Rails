@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   get "edit", to: "games#edit", as: :edit
 
   get "nintendo", to: "games#nintendo", as: :nintendo
+  get 'nintendo_games', to: 'games#nintendo', as: :nintendo_games
 
   get :comments, to: 'posts#comments'
 

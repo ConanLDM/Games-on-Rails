@@ -34,6 +34,10 @@ class GamesController < ApplicationController
       @game = Game.new
     end
 
+    if params[:game_title].present?
+      @games = Game.where(game_title: 'Mario').where("title LIKE ?", "%#{params[:@game][:title]}%")
+    end
+
     respond_to do |format|
       format.turbo_stream
       format.html do

@@ -1,9 +1,18 @@
-<p>The best of Mario from Nintendo!</p>
-
 <div class="flex-container">
+  <%= form_tag nintendo_games_path, method: :get do %>
+    <%= check_box_tag(:Game_Franchise, 'Mario', params[:Game_Franchise] == 'Mario', onchange: "this.form.submit();") %>
+    <%= label_tag(:Game_Franchise, "Mario") %>
+  <% end %>
+
   <ul class="card-container">
-    <% @games.each do |game| %>
-      <%= render "game", game: game %>
+    <% if params[:Game_Franchise].present? %>
+      <% @games.each do |game| %>
+        <% if game.franchise == 'Mario' %>
+          <%= render "game", game: game %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>No Games currently displayed</p>
     <% end %>
   </ul>
 </div>
